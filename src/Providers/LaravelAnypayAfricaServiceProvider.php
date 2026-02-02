@@ -12,6 +12,7 @@ use Illuminate\Support\ServiceProvider;
 class LaravelAnypayAfricaServiceProvider extends ServiceProvider
 {
     public function register() {
+        // The Facades
         $this->app->bind('paystack', function ($app) {
             return new PaystackService;
         });
@@ -25,7 +26,7 @@ class LaravelAnypayAfricaServiceProvider extends ServiceProvider
             return new PagaService;
         });
 
-        $this->mergeConfigFrom(__DIR__.'/../../config/config.php', 'laravel-anpay-africa');
+        $this->mergeConfigFrom(__DIR__.'/../../config/laravel-anypay-africa.php', 'laravel-anypay-africa');
 
     }
 
@@ -34,8 +35,8 @@ class LaravelAnypayAfricaServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-                __DIR__.'/../../config/config.php' => config_path('laravel-anpay-africa.php'),
-            ], 'config');
+                __DIR__.'/../../config/laravel-anypay-africa.php' => config_path('laravel-anypay-africa.php'),
+            ], 'laravel-anypay-africa');
         }
     }
 }
