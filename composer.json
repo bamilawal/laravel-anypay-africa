@@ -1,0 +1,36 @@
+{
+    "name": "bamilawal/laravel-anypay-africa",
+    "version": "1.0.0",
+    "description": "Access payment API's at a go from Africa major payment providers!",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bamilawal\\LaravelAnypayAfrica\\": "src/"
+        }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Bamilawal\\LaravelAnypayAfrica\\Providers\\LaravelAnypayAfricaServiceProvider"
+          ],
+          "aliases": {
+            "Paystack": "Bamilawal\\LaravelAnypayAfrica\\Facades\\Paystack",
+            "Flutterwave": "Bamilawal\\LaravelAnypayAfrica\\Facades\\Flutterwave",
+            "Moniepoint": "Bamilawal\\LaravelAnypayAfrica\\Facades\\Moniepoint",
+            "Paga": "Bamilawal\\LaravelAnypayAfrica\\Facades\\Paga"
+       }
+      }
+    },
+    "authors": [
+        {
+            "name": "Bamidele Lawal"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^10.6",
+        "phpunit/phpunit": "^12.3"
+    },
+    "require": {
+    }
+}
